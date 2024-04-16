@@ -5,7 +5,8 @@ fn main() {
     let mut users_map = HashMap::new();
 
     loop {
-        println!("Type 1 to add user or 2 to search for users or 3 to quit.");
+        println!("Type: \n1. to add user \n2. to search for users \n3. to quit.");
+        println!();
 
         let mut direction = String::new();
 
@@ -18,10 +19,7 @@ fn main() {
             Err(_) => continue,
         };
 
-        println!("The value is {}", &value);
-
         //newline to separate the input from the output
-        println!();
         println!();
 
         if value == 1 {
@@ -47,7 +45,11 @@ fn main() {
                 );
                 users_map.insert(department, user_name);
             } else {
-                println!("The '{}' department does not exist", department);
+                println!();
+                println!("{} department not available", department);
+                println!();
+                println!("Depertments {:#?}", &departments);
+                println!();
             }
         } else if value == 2 {
             println!("To search by department type 1. To search by user name type 2");
